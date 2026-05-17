@@ -1,0 +1,27 @@
+@use 'sass:math';
+
+$maket-max-width: 1730;
+
+@mixin fluid-text($min: 16, $max: 48) {
+	font-size: clamp(
+		#{$min}px,
+		#{math.div($max, $maket-max-width) * 100}vw,
+		#{$max}px
+	);
+}
+
+@mixin flex-center($isInline: false) {
+	@if $isInline {
+		display: inline-flex;
+	} @else {
+		display: flex;
+	}
+
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin square($size) {
+	width: $size;
+	aspect-ratio: 1;
+}

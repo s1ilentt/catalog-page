@@ -1,0 +1,29 @@
+// Tokens and base
+@use 'tokens/colors';
+@use 'tokens/layout';
+@use 'tokens/variables';
+@use 'base/reset';
+
+// Abstractions (SASS entities)
+@use 'abstracts/mixins' as *;
+@use 'abstracts/media' as *;
+
+// Utilities
+@use 'utils/utils';
+
+body {
+	@include fluid-text(14, 16);
+
+	font-family: var(--font-family-base);
+	line-height: 1.28;
+	background-color: var(--color-bg);
+	color: var(--color-primary);
+	font-weight: 500;
+}
+
+a,
+button,
+input,
+svg * {
+	transition-duration: var(--transition-duration);
+}
