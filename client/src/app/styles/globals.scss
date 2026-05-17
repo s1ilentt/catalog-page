@@ -14,7 +14,7 @@
 body {
 	@include fluid-text(14, 16);
 
-	font-family: var(--font-montserrat), sans-serif;
+	font-family: var(--font-montserrat);
 	line-height: 1.28;
 	background-color: var(--color-bg);
 	color: var(--color-primary);

@@ -1,3 +1,5 @@
-export default function CatalogPage() {
-	return <div>catalog</div>;
+import { CatalogPage } from '@/_pages/catalog';
+
+export default function Page() {
+	return <CatalogPage />;
 }

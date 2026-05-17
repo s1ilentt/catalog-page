@@ -37,7 +37,9 @@ export default function RootLayout({
 		<html lang='uk'>
 			<body className={clsx(montserrat.variable, golosText.variable)}>
 				<Header />
-				<QueryProvider>{children}</QueryProvider>
+				<QueryProvider>
+					<main>{children}</main>
+				</QueryProvider>
 			</body>
 		</html>
 	);
