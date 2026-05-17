@@ -1,0 +1,26 @@
+@use '@app/styles/abstracts/media' as *;
+
+.nav-link {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	height: 36px;
+
+	@include hover {
+		&::after {
+			width: 100%;
+		}
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		translate: -50%;
+		background-color: var(--color-primary);
+		transition-duration: var(--transition-duration);
+		width: 0;
+		height: 2px;
+	}
+}

@@ -1,0 +1,40 @@
+@use '@app/styles/abstracts/media' as *;
+
+.user-actions-wrapper {
+	display: flex;
+	align-items: center;
+	column-gap: 16px;
+}
+
+.user-actions {
+	display: flex;
+	align-items: center;
+	column-gap: 24px;
+
+	& > * {
+		height: 26px;
+
+		@include hover {
+			svg {
+				color: rgb(108, 108, 108);
+			}
+		}
+	}
+}
+
+.divider {
+	width: 1px;
+	height: 26px;
+	background-color: var(--color-primary);
+}
+
+.switch-language {
+	font-size: 0.875rem;
+	font-family: 'Montserrat';
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+
+	@include hover {
+		color: rgb(78, 78, 78);
+	}
+}

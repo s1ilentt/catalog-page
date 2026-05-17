@@ -3,6 +3,7 @@ import { Montserrat, Golos_Text } from 'next/font/google';
 import '@app/styles/globals.scss';
 import clsx from 'clsx';
 import { QueryProvider } from './providers';
+import { Header } from '@/widgets/header';
 
 const montserrat = Montserrat({
 	variable: '--font-montserrat',
@@ -35,6 +36,7 @@ export default function RootLayout({
 	return (
 		<html lang='uk'>
 			<body className={clsx(montserrat.variable, golosText.variable)}>
+				<Header />
 				<QueryProvider>{children}</QueryProvider>
 			</body>
 		</html>

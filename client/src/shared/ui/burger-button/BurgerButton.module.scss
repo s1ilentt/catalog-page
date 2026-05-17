@@ -1,0 +1,46 @@
+.menuBurgerIcon {
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 20;
+	height: 20px !important;
+	width: 20px;
+}
+
+.menuBurgerIcon::after,
+.menuBurgerIcon::before,
+.menuBurgerIcon span {
+	content: '';
+	position: absolute;
+	right: 0;
+	width: 100%;
+	height: 2px;
+	background-color: var(--color-primary);
+	transition: all 0.2s ease 0s;
+}
+
+.menuBurgerIcon::before {
+	top: 0;
+}
+
+.menuBurgerIcon::after {
+	bottom: 0;
+}
+
+.menuBurgerIcon span {
+	top: calc(50% - 1px);
+}
+
+.menuBurgerIconActive span {
+	width: 0;
+}
+
+.menuBurgerIconActive::before {
+	transform: rotate(-45deg);
+	top: calc(50% - 1px);
+}
+
+.menuBurgerIconActive::after {
+	transform: rotate(45deg);
+	bottom: calc(50% - 1px);
+}
