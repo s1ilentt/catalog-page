@@ -1,8 +1,10 @@
+from django.core.exceptions import ObjectDoesNotExist
+from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from ..services.catalog_service import CatalogService
 from ..services.filters_service import FiltersService
-from .serializers import ProductListSerializer
+from .serializers import ProductListSerializer, ProductDetailSerializer
 
 
 class ProductListView(APIView):
@@ -21,4 +23,8 @@ class ProductFiltersView(APIView):
 
 class ProductDetailView(APIView):
     def get(self, request, pk):
-        return Response({})
+        try:
+            product = CatalogService.get_product(pk)
+        except ObjectDoesNotExist:
+            return Response({'detail': 'Not found'}, status=status.HTTP_404_NOT_FOUND)
+        return Response(ProductDetailSerializer(product, context={'request': request}).data)

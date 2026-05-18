@@ -27,3 +27,7 @@ class CatalogService:
             'total': total,
             'results': products,
         }
+
+    @staticmethod
+    def get_product(product_id: int):
+        return ProductRepository.get_by_id(product_id)
