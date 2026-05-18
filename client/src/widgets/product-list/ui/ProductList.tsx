@@ -1,12 +1,17 @@
+'use client';
+
 import { IProduct, ProductCard } from '@/entities/product';
 import styles from './ProductList.module.scss';
 import { CatalogPagination } from '@/features/catalog-pagination';
 import { ICatalogSearchParams } from '@/shared/types';
 import { LoadMoreButton } from '@/features/catalog-load-more';
+import { useGetProducts } from '@/entities/product/model/useGetPorducts';
 
 const BASE_LIMIT = 24;
 
 export function ProductList({ searchParams }: ICatalogSearchParams) {
+	//! const { products } = useGetProducts();
+
 	const products: IProduct[] = [
 		{
 			id: 1,
@@ -1238,6 +1243,8 @@ export function ProductList({ searchParams }: ICatalogSearchParams) {
 		},
 	];
 
+	console.log(products);
+
 	const totalProduct = 101;
 	const totalPages = Math.ceil((totalProduct ?? 0) / BASE_LIMIT);
 
@@ -1255,7 +1262,7 @@ export function ProductList({ searchParams }: ICatalogSearchParams) {
 	return (
 		<div>
 			<div className={styles['product-list']}>
-				{products.map(product => (
+				{products?.map(product => (
 					<ProductCard
 						product={product}
 						key={product.id}

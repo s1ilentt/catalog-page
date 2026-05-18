@@ -1,0 +1,41 @@
+@use '@app/styles/abstracts/media' as *;
+
+.column-title {
+	margin-bottom: 24px;
+	color: var(--color-gray);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+
+	@include mobile {
+		margin-bottom: 16px;
+		text-align: center;
+	}
+}
+
+.column-list {
+	padding-left: 16px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+
+	font-family: var(--font-golos-text);
+	font-size: 0.9375rem;
+
+	@include mobile {
+		align-items: center;
+		padding-left: 0;
+		row-gap: 12px;
+	}
+
+	a {
+		@include hover {
+			color: rgb(105, 105, 105);
+		}
+	}
+
+	._active {
+		color: var(--color-pink);
+	}
+}

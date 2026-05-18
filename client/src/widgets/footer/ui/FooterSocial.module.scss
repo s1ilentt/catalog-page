@@ -1,11 +1,23 @@
+@use '@app/styles/abstracts/media' as *;
+
 .wrapper {
+	align-self: center;
 	display: flex;
 	flex-direction: column;
 	row-gap: 16px;
+
+	@include tablet {
+		align-items: center;
+	}
 
 	.text {
 		max-width: 400px;
 		color: rgba(100, 116, 139);
 		font-weight: 400;
+
+		@include tablet {
+			max-width: 440px;
+			text-align: center;
+		}
 	}
 }
