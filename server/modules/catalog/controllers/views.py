@@ -10,7 +10,7 @@ class ProductListView(APIView):
         data = CatalogService.list_products(request.query_params)
         return Response({
             'total': data['total'],
-            'results': ProductListSerializer(data['results'], many=True, context={'request': request}).data,
+            'data': ProductListSerializer(data['results'], many=True, context={'request': request}).data,
         })
 
 

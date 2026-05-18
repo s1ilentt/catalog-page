@@ -3,6 +3,10 @@ from ..models.product import Product
 
 
 class ProductListSerializer(serializers.ModelSerializer):
+    oldPrice = serializers.DecimalField(source='old_price', max_digits=10, decimal_places=2, allow_null=True)
+    discountPercent = serializers.IntegerField(source='discount_percent', allow_null=True)
+    heelParams = serializers.CharField(source='heel_params')
+
     class Meta:
         model = Product
         fields = [
@@ -10,11 +14,11 @@ class ProductListSerializer(serializers.ModelSerializer):
             'name',
             'category',
             'price',
-            'old_price',
-            'discount_percent',
+            'oldPrice',
+            'discountPercent',
             'sizes',
             'colors',
-            'heel_params',
+            'heelParams',
             'material',
             'image',
         ]
