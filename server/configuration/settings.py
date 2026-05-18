@@ -64,6 +64,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000',
 ]
 
+CORS_ALLOW_CREDENTIALS = True
+
 ROOT_URLCONF = 'configuration.urls'
 
 TEMPLATES = [
@@ -137,6 +139,13 @@ STATIC_URL = 'static/'
 
 REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'common.infrastructure.exceptions.custom_exception_handler',
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Catalog API',
+    'DESCRIPTION': 'API for WOH shoe catalog',
+    'VERSION': '1.0.0',
 }
 
 MEDIA_URL = '/media/'
