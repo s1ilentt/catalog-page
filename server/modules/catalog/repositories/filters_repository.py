@@ -1,6 +1,4 @@
 from django.db.models import Min, Max, Count
-from django.contrib.postgres.aggregates import ArrayAgg
-from django.db.models.functions import Unnest
 from ..models.product import Product
 
 
