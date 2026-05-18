@@ -1,0 +1,60 @@
+@use '@app/styles/abstracts/media' as *;
+
+.pagination {
+	display: flex;
+	width: fit-content;
+	margin-inline: auto;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 24px;
+
+	font-family: var(--font-golos-text);
+	font-weight: 600;
+
+	& > button {
+		font-size: 0.625rem;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+
+		@include hover {
+			color: rgb(74, 74, 74);
+		}
+
+		&:disabled {
+			color: var(--color-gray);
+			pointer-events: none;
+			cursor: not-allowed;
+		}
+	}
+
+	.page-list {
+		display: flex;
+		column-gap: 12px;
+
+		& button,
+		& span {
+			font-size: 0.875rem;
+			color: var(--color-gray);
+		}
+
+		& button {
+			@include hover {
+				color: rgb(58, 58, 58);
+			}
+			&._active {
+				position: relative;
+				color: var(--color-primary);
+
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 1px;
+					background-color: var(--color-pink);
+				}
+			}
+		}
+	}
+}

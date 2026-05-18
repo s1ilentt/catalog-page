@@ -4,6 +4,7 @@ import '@app/styles/globals.scss';
 import clsx from 'clsx';
 import { QueryProvider } from './providers';
 import { Header } from '@/widgets/header';
+import { Footer } from '@/widgets/footer';
 
 const montserrat = Montserrat({
 	variable: '--font-montserrat',
@@ -37,7 +38,10 @@ export default function RootLayout({
 		<html lang='uk'>
 			<body className={clsx(montserrat.variable, golosText.variable)}>
 				<Header />
-				<QueryProvider>{children}</QueryProvider>
+				<QueryProvider>
+					<main>{children}</main>
+				</QueryProvider>
+				<Footer />
 			</body>
 		</html>
 	);

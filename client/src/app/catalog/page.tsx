@@ -1,3 +1,18 @@
-export default function CatalogPage() {
-	return <div>catalog</div>;
+import { CatalogPage } from '@/_pages/catalog';
+
+interface IProps {
+	searchParams: Promise<{
+		page?: string;
+		limit?: string;
+		category?: string;
+		colors?: string;
+		minPrice?: string;
+		maxPrice?: string;
+	}>;
+}
+
+export default async function Page({ searchParams }: IProps) {
+	const params = await searchParams;
+
+	return <CatalogPage searchParams={params} />;
 }

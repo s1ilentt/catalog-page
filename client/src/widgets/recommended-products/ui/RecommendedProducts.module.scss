@@ -1,0 +1,63 @@
+@use '@app/styles/abstracts/mixins' as *;
+@use '@app/styles/abstracts/media' as *;
+
+.recommended-section {
+	padding-block: var(--section-padding-y);
+
+	@include tablet {
+		padding-block: 52px;
+	}
+
+	.header {
+		margin-bottom: 24px;
+
+		@include tablet {
+			margin-bottom: 16px;
+		}
+
+		.header-subtitle {
+			margin-bottom: 4px;
+			color: var(--color-pink);
+			font-family: var(--font-golos-text);
+			font-weight: 700;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+
+			@include fluid-text(10, 14);
+		}
+
+		.header-title {
+			font-weight: 800;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+
+			@include fluid-text(20, 36);
+			@media (max-width: 360px) {
+				font-size: 1rem !important;
+			}
+		}
+	}
+
+	.carousel {
+		display: flex;
+		gap: 24px;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scrollbar-width: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		@include tablet {
+			gap: 16px;
+		}
+	}
+
+	.carousel-item {
+		flex: 0 0 280px;
+		scroll-snap-align: start;
+
+		@include fluid-flex-basis(150, 230);
+	}
+}

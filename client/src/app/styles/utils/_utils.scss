@@ -1,4 +1,5 @@
 @use '../abstracts/media' as *;
+@use '../abstracts/mixins' as *;
 
 .container {
 	max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
@@ -8,6 +9,15 @@
 	@include mobile {
 		padding-inline: 16px;
 	}
+}
+
+.error-message {
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	padding-block: 25px;
+
+	@include fluid-text(20, 36);
 }
 
 .visually-hidden {

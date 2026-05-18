@@ -1,0 +1,27 @@
+@use '@app/styles/abstracts/media' as *;
+
+.product-list {
+	margin-bottom: 24px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 24px;
+	row-gap: 24px;
+
+	@include tablet {
+		row-gap: 16px;
+	}
+	@include mobile {
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 16px;
+	}
+}
+
+.button-load-more-wrapper {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 24px;
+
+	@include mobile {
+		margin-bottom: 16px;
+	}
+}
