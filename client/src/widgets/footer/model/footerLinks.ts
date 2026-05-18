@@ -4,7 +4,7 @@ export const FOOTER_COLUMNS = [
 	{
 		title: 'Каталог',
 		links: [
-			{ label: 'High Heels', href: ROUTES.CATALOG },
+			{ label: 'High Heels', href: ROUTES.CATALOG, active: true },
 			{ label: 'Одяг', href: ROUTES.CATALOG },
 			{ label: 'Образи', href: ROUTES.CATALOG },
 			{ label: 'Костюми', href: ROUTES.CATALOG },

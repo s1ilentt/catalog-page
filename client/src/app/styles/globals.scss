@@ -14,11 +14,18 @@
 body {
 	@include fluid-text(14, 16);
 
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 	font-family: var(--font-montserrat);
 	line-height: 1.28;
 	background-color: var(--color-bg);
 	color: var(--color-primary);
 	font-weight: 500;
+
+	main {
+		flex: 1 1 auto;
+	}
 }
 
 a,
