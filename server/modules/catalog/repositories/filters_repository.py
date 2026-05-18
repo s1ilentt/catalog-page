@@ -46,7 +46,7 @@ class FiltersRepository:
         with connection.cursor() as cursor:
             cursor.execute("""
                 SELECT unnest(colors) AS color, COUNT(*) AS count
-                FROM modules_catalog_product
+                FROM catalog_product
                 WHERE is_active = TRUE
                 GROUP BY color
                 ORDER BY color
@@ -59,7 +59,7 @@ class FiltersRepository:
         with connection.cursor() as cursor:
             cursor.execute("""
                 SELECT unnest(sizes) AS size, COUNT(*) AS count
-                FROM modules_catalog_product
+                FROM catalog_product
                 WHERE is_active = TRUE
                 GROUP BY size
                 ORDER BY size

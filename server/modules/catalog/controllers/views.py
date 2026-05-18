@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from ..services.catalog_service import CatalogService
+from ..services.filters_service import FiltersService
 from .serializers import ProductListSerializer
 
 
@@ -11,6 +12,11 @@ class ProductListView(APIView):
             'total': data['total'],
             'results': ProductListSerializer(data['results'], many=True, context={'request': request}).data,
         })
+
+
+class ProductFiltersView(APIView):
+    def get(self, request):
+        return Response(FiltersService.get_filters())
 
 
 class ProductDetailView(APIView):
