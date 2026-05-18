@@ -1,0 +1,114 @@
+@use '@app/styles/abstracts/mixins' as *;
+@use '@app/styles/abstracts/media' as *;
+
+.card-link {
+	display: block;
+}
+
+.card-image-wrapper {
+	position: relative;
+
+	& img {
+		width: 100%;
+		height: auto;
+	}
+
+	& button {
+		position: absolute;
+		right: 16px;
+		top: 16px;
+		background-color: rgb(255 255 255);
+		border-radius: 100%;
+		box-shadow: var(--shadow);
+
+		@include square(40);
+		@include flex-center(true);
+	}
+
+	.wishlist-icon {
+		& * {
+			transition: none !important;
+		}
+
+		&._active {
+			color: var(--color-pink);
+			fill: var(--color-pink);
+		}
+	}
+
+	.discount-label {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 65px;
+		height: 30px;
+		background-color: var(--color-pink);
+		color: var(--Dark, rgba(13, 13, 13, 1));
+		font-size: 0.5rem;
+		font-weight: 600;
+		text-transform: uppercase;
+
+		@include tablet {
+			width: 50px;
+			height: 25px;
+		}
+
+		@include fluid-text(8, 12);
+		@include flex-center(true);
+	}
+}
+
+.card-content {
+	padding: 12px;
+	display: flex;
+	column-gap: 8px;
+	justify-content: space-between;
+	align-items: center;
+
+	.card-title {
+		font-weight: 600;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+
+		@include fluid-text(10, 14);
+	}
+
+	.card-description {
+		color: var(--color-gray);
+		font-family: var(--font-golos-text);
+		font-weight: 400;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+
+		@include fluid-text(8, 11);
+	}
+
+	.price {
+		color: var(--Dark, rgba(13, 13, 13, 1));
+		font-weight: 600;
+		white-space: nowrap;
+
+		@include fluid-text(13, 15);
+	}
+
+	.discount-price {
+		display: flex;
+		flex-direction: column;
+		column-gap: 2px;
+		white-space: nowrap;
+
+		.old-price {
+			color: var(--Dark, rgba(13, 13, 13, 1));
+			font-size: 0.5625rem;
+			text-decoration-line: line-through;
+			text-align: right;
+		}
+
+		.new-price {
+			color: var(--color-pink);
+			font-weight: 600;
+
+			@include fluid-text(13, 15);
+		}
+	}
+}
