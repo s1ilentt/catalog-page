@@ -1,6 +1,35 @@
-.footer-content {
-	display: flex;
-	justify-content: space-between;
-	column-gap: 40px;
+@use '@app/styles/abstracts/media' as *;
+
+.footer-content-wrapper {
 	border-bottom: var(--border);
+
+	.footer-content {
+		padding-bottom: 45px;
+		display: flex;
+		column-gap: 150px;
+
+		@include tablet {
+			padding-bottom: 24px;
+			flex-direction: column;
+			row-gap: 32px;
+		}
+		@include mobile {
+			row-gap: 24px;
+		}
+
+		.columns-wrapper {
+			flex: 1 1 auto;
+			display: flex;
+			justify-content: space-between;
+			column-gap: 30px;
+
+			@include tablet {
+				column-gap: 20px;
+			}
+			@include mobile {
+				flex-direction: column;
+				row-gap: 24px;
+			}
+		}
+	}
 }

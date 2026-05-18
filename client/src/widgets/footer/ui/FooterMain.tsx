@@ -7,15 +7,19 @@ import { FooterSocial } from './FooterSocial';
 
 export function FooterMain() {
 	return (
-		<div className={clsx(styles['footer-content'], 'container')}>
-			<FooterSocial />
-			{FOOTER_COLUMNS.map(column => (
-				<FooterColumn
-					key={column.title}
-					{...column}
-				/>
-			))}
-			<FooterAbout />
+		<div className={styles['footer-content-wrapper']}>
+			<div className={clsx(styles['footer-content'], 'container')}>
+				<FooterSocial />
+				<div className={styles['columns-wrapper']}>
+					{FOOTER_COLUMNS.map(column => (
+						<FooterColumn
+							key={column.title}
+							{...column}
+						/>
+					))}
+					<FooterAbout />
+				</div>
+			</div>
 		</div>
 	);
 }
