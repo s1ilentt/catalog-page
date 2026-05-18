@@ -135,5 +135,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'common.infrastructure.exceptions.custom_exception_handler',
+}
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
