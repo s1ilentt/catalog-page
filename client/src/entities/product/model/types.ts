@@ -15,5 +15,5 @@ export interface IProduct {
 
 export interface IProductsResponse {
 	data: IProduct[];
-	totalPages: number;
+	total: number;
 }

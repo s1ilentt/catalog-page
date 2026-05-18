@@ -10,6 +10,13 @@ $maket-max-width: 1730;
 	);
 }
 
+@mixin fluid-flex-basis($min: 150, $max: 230, $min-vw: 768, $max-vw: 1550) {
+	$slope: math.div($max - $min, $max-vw - $min-vw);
+	$intercept: $min - $slope * $min-vw;
+
+	flex: 0 0 clamp(#{$min}px, #{$slope * 100}vw + #{$intercept}px, #{$max}px);
+}
+
 @mixin flex-center($isInline: false) {
 	@if $isInline {
 		display: inline-flex;

@@ -2,6 +2,9 @@ import { IProduct, ProductCard } from '@/entities/product';
 import styles from './ProductList.module.scss';
 import { CatalogPagination } from '@/features/catalog-pagination';
 import { ICatalogSearchParams } from '@/shared/types';
+import { LoadMoreButton } from '@/features/catalog-load-more';
+
+const BASE_LIMIT = 24;
 
 export function ProductList({ searchParams }: ICatalogSearchParams) {
 	const products: IProduct[] = [
@@ -1219,9 +1222,35 @@ export function ProductList({ searchParams }: ICatalogSearchParams) {
 			heelParams: '10 см (Professional)',
 			material: 'Leather',
 		},
+		{
+			id: 102,
+			name: 'Scarlett Pump',
+			category: 'Pumps',
+			description: 'Elegant pump for evening events',
+			image: '/images/placeholder.png',
+			price: 1999,
+			oldPrice: 0,
+			discountPercent: 0,
+			sizes: [36, 37, 38, 39, 40],
+			colors: ['black', 'red'],
+			heelParams: '10 см (Professional)',
+			material: 'Leather',
+		},
 	];
 
-	const totalPages = 12;
+	const totalProduct = 101;
+	const totalPages = Math.ceil((totalProduct ?? 0) / BASE_LIMIT);
+
+	const limit = Number(searchParams.limit) || 24;
+	const currentPage = Number(searchParams.page) || 1;
+
+	const skippedProducts = (currentPage - 1) * BASE_LIMIT;
+
+	//! const remainingOnPage =
+	//! 	(totalProduct ?? 0) - skipped - (products?.length ?? 0);
+	const remainingProductsOnPage = (totalProduct ?? 0) - skippedProducts - 24;
+
+	const hasMore = remainingProductsOnPage > 0;
 
 	return (
 		<div>
@@ -1233,8 +1262,13 @@ export function ProductList({ searchParams }: ICatalogSearchParams) {
 					/>
 				))}
 			</div>
+			{hasMore && (
+				<div className={styles['button-load-more-wrapper']}>
+					<LoadMoreButton currentLimit={limit} />
+				</div>
+			)}
 			<CatalogPagination
-				currentPage={Number(searchParams.page) || 1}
+				currentPage={currentPage}
 				totalPages={totalPages}
 			/>
 		</div>

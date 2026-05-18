@@ -1,5 +1,11 @@
+@use '@app/styles/abstracts/media' as *;
+
 .body {
 	display: grid;
 	grid-template-columns: 333px 1fr;
 	gap: 48px;
+
+	@include tablet {
+		display: block;
+	}
 }

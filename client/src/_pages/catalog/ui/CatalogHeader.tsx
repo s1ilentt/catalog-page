@@ -7,7 +7,9 @@ export function CatalogHeader() {
 		<div className={styles['catalog-header']}>
 			<div className={clsx('container', styles['content-wrapper'])}>
 				<h1 className={styles.title}>каталог взуття</h1>
-				<Button>Сортування: За замовчуванням</Button>
+				<div className='hidden-tablet'>
+					<Button>Сортування: За замовчуванням</Button>
+				</div>
 			</div>
 		</div>
 	);

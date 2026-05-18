@@ -11,7 +11,7 @@ export const useGetProducts = (params?: IProductParams) => {
 
 	return {
 		products: data?.data,
-		totalPages: data?.totalPages,
+		totalProduct: data?.total,
 		isError,
 		isPending,
 	};

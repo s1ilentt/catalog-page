@@ -3,6 +3,7 @@ import { CatalogPage } from '@/_pages/catalog';
 interface IProps {
 	searchParams: Promise<{
 		page?: string;
+		limit?: string;
 		category?: string;
 		colors?: string;
 		minPrice?: string;

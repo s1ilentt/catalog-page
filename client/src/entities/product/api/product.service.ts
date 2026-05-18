@@ -11,7 +11,7 @@ export interface IProductParams {
 }
 
 class ProductService {
-	private baseUrl = 'products';
+	private baseUrl = 'api/v1/products';
 
 	async getProducts(params?: IProductParams) {
 		const { data } = await api.get<IProductsResponse>(this.baseUrl, { params });

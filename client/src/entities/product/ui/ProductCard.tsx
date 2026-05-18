@@ -13,9 +13,10 @@ import { ROUTES } from '@/shared/config';
 
 interface IProductCard {
 	product: IProduct;
+	isSmall?: boolean;
 }
 
-export function ProductCard({ product }: IProductCard) {
+export function ProductCard({ product, isSmall = false }: IProductCard) {
 	const [isWishlist, setIsWishlist] = useState(false);
 
 	return (
@@ -23,7 +24,7 @@ export function ProductCard({ product }: IProductCard) {
 			className={styles['card-link']}
 			href={ROUTES.HOME}
 		>
-			<article>
+			<article className={clsx(isSmall && styles['card-wrapper--small'])}>
 				<div className={styles['card-image-wrapper']}>
 					<Image
 						alt={product.name}
@@ -46,8 +47,6 @@ export function ProductCard({ product }: IProductCard) {
 						aria-pressed={isWishlist}
 					>
 						<WishListIcon
-							width={20}
-							height={20}
 							aria-hidden={true}
 							className={clsx(
 								styles['wishlist-icon'],
@@ -55,7 +54,7 @@ export function ProductCard({ product }: IProductCard) {
 							)}
 						/>
 					</button>
-					{product.discountPercent && (
+					{!!product.discountPercent && (
 						<div className={styles['discount-label']}>
 							{`${product.discountPercent}% OFF`}
 						</div>

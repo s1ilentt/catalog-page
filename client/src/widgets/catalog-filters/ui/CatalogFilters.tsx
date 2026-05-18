@@ -1,3 +1,8 @@
 export function CatalogFilters() {
-	return <div style={{ height: '900px', backgroundColor: 'black' }}></div>;
+	return (
+		<div
+			className='hidden-tablet'
+			style={{ height: '900px', backgroundColor: 'black' }}
+		></div>
+	);
 }
