@@ -4,11 +4,17 @@ import clsx from 'clsx';
 import styles from './RecommendedProducts.module.scss';
 import { useGetProducts } from '@/entities/product/model/useGetPorducts';
 import { ProductCard } from '@/entities/product';
+import { EmptyState, ErrorState, Loader } from '@/shared/ui';
 
 export function RecommendedProducts() {
-	const { products, totalProduct, isError } = useGetProducts({
-		limit: '6',
-	});
+	const { products, totalProduct, isError, isPending, refetch } =
+		useGetProducts({
+			limit: '6',
+		});
+
+	if (isPending) return <Loader />;
+	if (isError) return <ErrorState onRetry={refetch} />;
+	if (!products?.length) return <EmptyState />;
 
 	return (
 		<section className={clsx(styles['recommended-section'], 'container')}>
@@ -16,9 +22,9 @@ export function RecommendedProducts() {
 				<h4 className={styles['header-subtitle']}>Our selection</h4>
 				<h2 className={styles['header-title']}>Рекомендовані товари</h2>
 			</div>
-			{(products?.length ?? 0) > 0 ? (
+			{
 				<div className={styles.carousel}>
-					{products?.map(product => (
+					{products.map(product => (
 						<div
 							className={styles['carousel-item']}
 							key={product.id}
@@ -30,9 +36,7 @@ export function RecommendedProducts() {
 						</div>
 					))}
 				</div>
-			) : (
-				<h3 className='error-message'>Продукти не знайдені</h3>
-			)}
+			}
 		</section>
 	);
 }

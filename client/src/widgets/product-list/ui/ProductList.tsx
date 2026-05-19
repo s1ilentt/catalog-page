@@ -25,8 +25,6 @@ export function ProductList({
 	const remainingProductsOnPage =
 		(totalProduct ?? 0) - skippedProducts - (products?.length ?? 0);
 
-	console.log(remainingProductsOnPage);
-
 	const hasMore = remainingProductsOnPage > 0;
 
 	if (isPending) return <Loader />;
