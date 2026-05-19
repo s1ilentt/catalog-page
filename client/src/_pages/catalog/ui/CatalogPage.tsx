@@ -6,7 +6,11 @@ import { ProductList } from '@/widgets/product-list';
 import { ICatalogSearchParams } from '@/shared/types';
 import { RecommendedProducts } from '@/widgets/recommended-products';
 
-export function CatalogPage({ searchParams }: ICatalogSearchParams) {
+export function CatalogPage({
+	searchParams,
+}: {
+	searchParams: ICatalogSearchParams;
+}) {
 	return (
 		<div>
 			<section>
