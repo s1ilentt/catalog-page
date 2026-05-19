@@ -3,6 +3,13 @@
 .wrapper {
 	position: relative;
 	display: inline-block;
+
+	button {
+		@include mobile {
+			padding-inline: 8px !important;
+			font-size: 0.625rem !important;
+		}
+	}
 }
 
 .arrow {

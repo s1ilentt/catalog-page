@@ -3,7 +3,7 @@
 import { useCallback } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-const MULTI_VALUE_FILTERS = new Set(['color', 'size']);
+const MULTI_VALUE_FILTERS = new Set(['colors', 'sizes']);
 
 export function useUrlFilter() {
 	const router = useRouter();
@@ -96,5 +96,9 @@ export function useUrlFilter() {
 		[router, pathname, searchParams],
 	);
 
-	return { getValues, getValue, toggleValue, setRange, clearFilter };
+	const resetAll = useCallback(() => {
+		router.push(pathname);
+	}, [router, pathname]);
+
+	return { getValues, getValue, toggleValue, setRange, clearFilter, resetAll };
 }
