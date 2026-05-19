@@ -8,9 +8,9 @@ fake = Faker('uk_UA')
 
 TOTAL = 100
 IMAGES = [
-    'products/shoe1.webp',
-    'products/shoe2.webp',
-    'products/shoe3.webp',
+    'products/shoe_1.webp',
+    'products/shoe_2.webp',
+    'products/shoe_3.webp',
 ]
 
 
