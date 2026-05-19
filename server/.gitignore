@@ -4,6 +4,8 @@ __pycache__/
 *.pyo
 .env
 db.sqlite3
-media/
+media/*
+!media/products/
+!media/products/*.webp
 *.log
 .DS_Store
