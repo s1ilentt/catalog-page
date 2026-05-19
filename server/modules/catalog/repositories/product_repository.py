@@ -1,8 +1,5 @@
 from ..models.product import Product
 
-ALLOWED_ORDERING = {'price', '-price', 'name', '-name', 'created_at', '-created_at'}
-DEFAULT_ORDERING = '-created_at'
-
 
 class ProductRepository:
     @staticmethod
@@ -25,9 +22,6 @@ class ProductRepository:
             qs = qs.filter(price__gte=min_price)
         if max_price is not None:
             qs = qs.filter(price__lte=max_price)
-
-        if ordering not in ALLOWED_ORDERING:
-            ordering = DEFAULT_ORDERING
 
         qs = qs.order_by(ordering)
         total = qs.count()
