@@ -74,8 +74,8 @@ class FiltersService:
                 {
                     'name': 'price',
                     'label': 'Ціна, ГРН',
-                    'min': price_range['min_price'],
-                    'max': price_range['max_price'],
+                    'min': price_range['min_price'] if price_range['min_price'] is not None else 0,
+                    'max': price_range['max_price'] if price_range['max_price'] is not None else 10000,
                 },
             ]
         }
