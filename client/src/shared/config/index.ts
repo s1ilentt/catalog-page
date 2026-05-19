@@ -1,1 +1,1 @@
-export { ROUTES } from './routes';
+export { ROUTES, ROUTE_LABELS } from './routes';

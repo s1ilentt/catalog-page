@@ -25,6 +25,11 @@ body {
 
 	main {
 		flex: 1 1 auto;
+		padding-top: 20px;
+
+		@include mobile {
+			padding-top: 16px;
+		}
 	}
 }
 
