@@ -5,7 +5,7 @@ class ProductRepository:
     @staticmethod
     def find_many(*, category=None, colors=None, sizes=None, heel_params=None,
                   material=None, min_price=None, max_price=None,
-                  ordering=DEFAULT_ORDERING, page=1, limit=24):
+                  ordering='-created_at', page=1, limit=24):
         qs = Product.objects.filter(is_active=True)
 
         if category:
