@@ -7,7 +7,6 @@ import styles from './ProductCard.module.scss';
 import { Heart as WishListIcon } from 'lucide-react';
 import { useState } from 'react';
 import clsx from 'clsx';
-import productPlaceholder from '@/shared/assets/images/product-image.webp';
 import placeholderImage from '@/shared/assets/images/placeholder-image.webp';
 import Link from 'next/link';
 import { ROUTES } from '@/shared/config';
@@ -19,9 +18,7 @@ interface IProductCard {
 
 export function ProductCard({ product, isSmall = false }: IProductCard) {
 	const [isWishlist, setIsWishlist] = useState(false);
-	const [imgSrc, setImgSrc] = useState<string | StaticImageData>(
-		productPlaceholder,
-	);
+	const [imgSrc, setImgSrc] = useState<string | StaticImageData>(product.image);
 
 	return (
 		<Link
@@ -32,7 +29,6 @@ export function ProductCard({ product, isSmall = false }: IProductCard) {
 				<div className={styles['card-image-wrapper']}>
 					<Image
 						alt={product.name}
-						//! src={process.env.NEXT_PUBLIC_API_URL + product.image}
 						src={imgSrc}
 						width={357}
 						height={449}

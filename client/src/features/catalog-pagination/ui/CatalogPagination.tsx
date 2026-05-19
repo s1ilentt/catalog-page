@@ -22,7 +22,7 @@ export function CatalogPagination({
 	const handlePageChange = (page: number) => {
 		const params = new URLSearchParams(searchParams.toString());
 		params.set('page', String(page));
-		params.delete('limit'); // сбрасываем подгрузку при переходе по страницам
+		params.delete('limit');
 		router.push(`?${params.toString()}`);
 	};
 
