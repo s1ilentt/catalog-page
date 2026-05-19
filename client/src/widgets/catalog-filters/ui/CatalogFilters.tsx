@@ -29,12 +29,12 @@ export function CatalogFilters() {
 							label={filter.label}
 							activeCount={activeCount}
 						>
-							{filter.name === 'size' ? (
+							{filter.name === 'sizes' ? (
 								<SizeFilter
 									name={filter.name}
 									values={filter.values}
 								/>
-							) : filter.name === 'color' ? (
+							) : filter.name === 'colors' ? (
 								<ColorFilter
 									name={filter.name}
 									values={filter.values}

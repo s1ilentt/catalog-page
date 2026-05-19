@@ -7,12 +7,7 @@ class ProductService {
 	private baseUrl = 'api/v1/products';
 
 	async getProducts(params?: ICatalogSearchParams) {
-		const formattedParams = formatQueryParams(params ?? {});
-		console.log(formattedParams);
-
-		const { data } = await api.get<IProductsResponse>(this.baseUrl, {
-			params: formattedParams,
-		});
+		const { data } = await api.get<IProductsResponse>(this.baseUrl, { params });
 		return data;
 	}
 }

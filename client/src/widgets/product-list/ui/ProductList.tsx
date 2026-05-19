@@ -17,6 +17,8 @@ export function ProductList({
 	const { products, totalProduct, isError, refetch, isPending } =
 		useGetProducts(searchParams);
 
+	console.log(totalProduct);
+
 	const totalPages = Math.ceil((totalProduct ?? 0) / BASE_LIMIT);
 	const limit = Number(searchParams.limit) || 24;
 	const currentPage = Number(searchParams.page) || 1;
