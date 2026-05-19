@@ -1,0 +1,53 @@
+@use '@app/styles/abstracts/media' as *;
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: 24px;
+}
+
+.button {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	cursor: pointer;
+	line-height: 1.28;
+
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+
+	@include hover {
+		color: rgb(106, 106, 106);
+	}
+}
+
+.label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-left: 1px;
+	width: 20px;
+	height: 20px;
+	background: var(--color-pink);
+	color: var(--color-bg);
+	font-size: 0.75rem;
+	border-radius: 100%;
+}
+
+.arrow {
+	transition: transform 0.2s ease;
+	font-size: 0.75em;
+
+	&--open {
+		transform: rotate(180deg);
+	}
+}

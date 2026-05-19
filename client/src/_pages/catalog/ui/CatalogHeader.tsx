@@ -1,6 +1,6 @@
-import { Button } from '@/shared/ui';
 import styles from './CatalogHeader.module.scss';
 import clsx from 'clsx';
+import { SortDropdown } from '@/features/catalog-sort';
 
 export function CatalogHeader() {
 	return (
@@ -8,7 +8,7 @@ export function CatalogHeader() {
 			<div className={clsx('container', styles['content-wrapper'])}>
 				<h1 className={styles.title}>каталог взуття</h1>
 				<div className='hidden-tablet'>
-					<Button>Сортування: За замовчуванням</Button>
+					<SortDropdown />
 				</div>
 			</div>
 		</div>

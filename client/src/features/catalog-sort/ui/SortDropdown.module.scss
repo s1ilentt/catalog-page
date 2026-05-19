@@ -1,0 +1,45 @@
+@use '@app/styles/abstracts/media' as *;
+
+.wrapper {
+	position: relative;
+	display: inline-block;
+}
+
+.arrow {
+	transition: transform 0.2s ease;
+	font-size: 0.875rem;
+}
+
+.list {
+	position: absolute;
+	top: calc(100% + 4px);
+	right: 0;
+	z-index: 10;
+	min-width: 100%;
+	padding: 0.5rem 0;
+	background: var(--color-bg);
+	border: 1px solid var(--color-pink);
+
+	font-family: var(--font-golos-text);
+	font-size: 0.875rem;
+}
+
+.option {
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: background-color 0.15s ease;
+
+	@include hover {
+		background: rgba(0, 0, 0, 0.04);
+	}
+
+	&--active {
+		font-weight: 600;
+		color: var(--color-pink);
+	}
+
+	&:not(:last-child) {
+		border-bottom: var(--border);
+	}
+}

@@ -1,4 +1,5 @@
 import { CatalogPage } from '@/_pages/catalog';
+import { filtersService } from '@/entities/filter/api/filter.service';
 import { productService } from '@/entities/product/api/product.service';
 import { hashKey } from '@/shared/lib';
 import { ICatalogSearchParams } from '@/shared/types';
@@ -33,6 +34,10 @@ export default async function Page({ searchParams }: IProps) {
 		queryClient.prefetchQuery({
 			queryKey: ['products', { limit: '6' }],
 			queryFn: () => productService.getProducts({ limit: '6' }),
+		}),
+		queryClient.prefetchQuery({
+			queryKey: ['filters'],
+			queryFn: () => filtersService.getFilters(),
 		}),
 	]);
 

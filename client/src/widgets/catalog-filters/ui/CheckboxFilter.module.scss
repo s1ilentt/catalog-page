@@ -1,0 +1,76 @@
+@use '@app/styles/abstracts/media' as *;
+@use '@app/styles/abstracts/mixins' as *;
+
+.list {
+	display: flex;
+	flex-direction: column;
+	padding-left: 12px;
+	border-left: var(--border);
+	gap: 1rem;
+
+	font-family: var(--font-golos-text);
+	letter-spacing: 0.01em;
+}
+
+.item {
+	height: 19px;
+	display: block;
+	line-height: 1;
+}
+
+.label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: pointer;
+
+	&:hover .text {
+		color: rgb(99, 99, 99);
+	}
+}
+
+.checkbox {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+	position: relative;
+	width: 19px;
+	height: 19px;
+	cursor: pointer;
+	border: var(--border);
+
+	transition-duration: 0.1s !important;
+
+	&:checked {
+		background: var(--color-pink);
+		border-color: var(--color-pink);
+	}
+
+	&:checked::after {
+		content: '';
+		position: absolute;
+		top: 2px;
+		left: 6px;
+		width: 6px;
+		height: 10px;
+		border: solid var(--color-bg);
+		border-width: 0 2px 2px 0;
+		transform: rotate(45deg);
+	}
+}
+
+.color {
+	width: 1rem;
+	height: 1rem;
+	border: var(--border);
+}
+
+.text {
+	flex: 1;
+	transition: color 0.15s ease;
+}
+
+.count {
+	font-size: 0.875em;
+}
