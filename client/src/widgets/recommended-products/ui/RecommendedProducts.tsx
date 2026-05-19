@@ -2,8 +2,7 @@
 
 import clsx from 'clsx';
 import styles from './RecommendedProducts.module.scss';
-import { useGetProducts } from '@/entities/product/model/useGetPorducts';
-import { ProductCard } from '@/entities/product';
+import { ProductCard, useGetProducts } from '@/entities/product';
 import { EmptyState, ErrorState, Loader } from '@/shared/ui';
 
 export function RecommendedProducts() {
