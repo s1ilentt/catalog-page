@@ -1,6 +1,6 @@
 # Catalog API — Backend
 
-REST API для каталогу взуття. Django + PostgreSQL.
+REST API для каталогу. Django + PostgreSQL.
 
 ## Стек
 
