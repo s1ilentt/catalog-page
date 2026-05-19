@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { QueryProvider } from './providers';
 import { Header } from '@/widgets/header';
 import { Footer } from '@/widgets/footer';
+import { BreadcrumbsWidget } from '@/widgets/breadcrumbs';
 
 const montserrat = Montserrat({
 	variable: '--font-montserrat',
@@ -39,7 +40,10 @@ export default function RootLayout({
 			<body className={clsx(montserrat.variable, golosText.variable)}>
 				<Header />
 				<QueryProvider>
-					<main>{children}</main>
+					<main>
+						<BreadcrumbsWidget />
+						{children}
+					</main>
 				</QueryProvider>
 				<Footer />
 			</body>
