@@ -1,11 +1,10 @@
 'use client';
 
-import { ProductCard } from '@/entities/product';
+import { ProductCard, useGetProducts } from '@/entities/product';
 import styles from './ProductList.module.scss';
 import { CatalogPagination } from '@/features/catalog-pagination';
 import { ICatalogSearchParams } from '@/shared/types';
 import { LoadMoreButton } from '@/features/catalog-load-more';
-import { useGetProducts } from '@/entities/product/model/useGetPorducts';
 import { EmptyState, ErrorState, Loader } from '@/shared/ui';
 
 const BASE_LIMIT = 24;
