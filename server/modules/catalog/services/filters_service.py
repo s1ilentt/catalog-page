@@ -26,7 +26,7 @@ class FiltersService:
                     ],
                 },
                 {
-                    'name': 'size',
+                    'name': 'sizes',
                     'label': 'Розмір стельки (см)',
                     'values': [
                         {'value': item['size'], 'label': item['size'], 'count': item['count']}
@@ -58,7 +58,7 @@ class FiltersService:
                     ],
                 },
                 {
-                    'name': 'color',
+                    'name': 'colors',
                     'label': 'Колір',
                     'values': [
                         {
