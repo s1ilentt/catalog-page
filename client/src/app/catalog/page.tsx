@@ -9,8 +9,6 @@ import {
 	QueryClient,
 } from '@tanstack/react-query';
 
-export const revalidate = 180;
-
 interface IProps {
 	searchParams: Promise<ICatalogSearchParams>;
 }
