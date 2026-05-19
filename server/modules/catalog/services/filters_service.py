@@ -5,7 +5,6 @@ from ..constants import COLORS, CATEGORIES, MATERIALS, HEEL_PARAMS
 class FiltersService:
     @staticmethod
     def get_filters() -> dict:
-        price_range = FiltersRepository.get_price_range()
         category_counts = FiltersRepository.get_category_counts()
         material_counts = FiltersRepository.get_material_counts()
         heel_params_counts = FiltersRepository.get_heel_params_counts()
@@ -74,8 +73,8 @@ class FiltersService:
                 {
                     'name': 'price',
                     'label': 'Ціна, ГРН',
-                    'min': price_range['min_price'] if price_range['min_price'] is not None else 0,
-                    'max': price_range['max_price'] if price_range['max_price'] is not None else 10000,
+                    'min': 0,
+                    'max': 10000,
                 },
             ]
         }
