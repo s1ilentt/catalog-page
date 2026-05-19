@@ -31,7 +31,7 @@ class ProductRepository:
 
         qs = qs.order_by(ordering)
         total = qs.count()
-        offset = (page - 1) * limit
+        offset = (page - 1) * 24
 
         return qs[offset:offset + limit], total
 
